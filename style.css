@@ -152,11 +152,12 @@ footer {
     position: fixed;
     top: 15px;
     right: 20px;
-    background: #3498db;
+    background: #84bde3;
+    background-color: rgba(0, 0, 0, 0.5);
     color: black;
     border: none;
     padding: 8px 8px;
-    border-radius: 20px;
+    border-radius: 50px;
     cursor: pointer;
     font-size: 14px;
     box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
@@ -188,6 +189,7 @@ body.dark-mode #themeToggle {
     text-decoration: none;
     color: #0a83d3;
 }
+
 
 
 
