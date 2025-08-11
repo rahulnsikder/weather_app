@@ -185,3 +185,7 @@ body.dark-mode #themeToggle {
   color: white; /* This sets the font color to white */
   background: #2980b9; /* Optional: A slightly darker blue for better contrast */
 }
+#anchor{
+    text-decoration: none;
+}
+
