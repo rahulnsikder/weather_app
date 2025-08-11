@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - Dark/Light Mode</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-mode">
+
+    <!-- Theme Toggle Button -->
+    <button id="themeToggle">🌙 Dark Mode</button>
+
+    <div class="container">
+        <h1>Weather App</h1>
+        <input type="text" id="cityInput" placeholder="Enter city name">
+        <button onclick="getWeather()">Get Weather</button>
+
+        <!-- Weather Result -->
+        <div id="weatherResult" class="weather-card" style="display:none;">
+            <h2 id="cityName"></h2>
+            <img id="weatherIcon" src="" alt="Weather Icon">
+            <div class="weather-details">
+                <p><strong>Temperature:</strong> <span id="temp"></span></p>
+                <p><strong>Condition:</strong> <span id="condition"></span></p>
+                <p><strong>Humidity:</strong> <span id="humidity"></span></p>
+                <p><strong>Wind:</strong> <span id="wind"></span></p>
+            </div>
+        </div>
+
+        <footer>
+            <p class="developer">Developed by Rahul</p>
+        </footer>
+    </div>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            body.classList.toggle('light-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                themeToggle.textContent = '☀️ Light Mode';
+            } else {
+                themeToggle.textContent = '🌙 Dark Mode';
+            }
+        });
+
+        // Weather API Example
+        function getWeather() {
+            let city = document.getElementById("cityInput").value;
+            if (!city) return;
+
+            // Dummy weather data for testing
+            document.getElementById("weatherResult").style.display = "block";
+            document.getElementById("cityName").textContent = city;
+            document.getElementById("weatherIcon").src = "https://openweathermap.org/img/wn/02d.png";
+            document.getElementById("temp").textContent = "25°C";
+            document.getElementById("condition").textContent = "Partly Cloudy";
+            document.getElementById("humidity").textContent = "60%";
+            document.getElementById("wind").textContent = "15 km/h";
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
