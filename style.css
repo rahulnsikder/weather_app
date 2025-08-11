@@ -155,7 +155,7 @@ footer {
     background: #3498db;
     color: black;
     border: none;
-    padding: 8px 14px;
+    padding: 8px 8px;
     border-radius: 20px;
     cursor: pointer;
     font-size: 14px;
@@ -165,7 +165,6 @@ footer {
 }
 
 #themeToggle:hover {
-    background: #2980b9;
     transform: scale(1.05);
 }
 /* Light Mode Input Style */
@@ -187,7 +186,9 @@ body.dark-mode #themeToggle {
 }
 #anchor{
     text-decoration: none;
+    color: #0a83d3;
 }
+
 
 
 
