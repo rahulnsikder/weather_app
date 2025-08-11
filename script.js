@@ -25,7 +25,7 @@ async function getWeather() {
         return;
     }
 
-    const apiKey = "e1936efb6e0a44b2a29114201251108"; // Replace with your API key
+    const apiKey = "cb65e0e33e9b416b890114054251108"; // Replace with your API key
     const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`;
 
     try {
@@ -103,3 +103,4 @@ themeToggle.addEventListener("click", () => {
         localStorage.setItem("theme", "light");
     }
 });
+
