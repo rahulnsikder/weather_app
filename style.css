@@ -1,65 +1,11 @@
-/* Light Mode Colors & Style */
-.light-mode {
-    --bg-color: linear-gradient(135deg, #f0f4f8, #d9e4ec); /* Soft blue gradient */
-    --text-color: #1f2d3d; /* Deep navy */
-    --card-bg: #f7f9fb; /* Slightly darker than pure white */
-    --card-text: #1f2d3d;
-    --button-bg: #3498db;
-    --button-hover-bg: #2980b9;
-    --accent-color: #16a085;
+:root {
+    /* Light mode defaults */
+    --bg-color: #99bada;
+    --text-color: #2c3e50;
+    --card-bg: #fdfbfb;
+    --card-text: #2c3e50;
+    --accent-color: #ff9800;
 }
-
-/* Apply gradient to background */
-.light-mode {
-    background: var(--bg-color);
-}
-
-/* Weather card style */
-.light-mode .weather-card {
-    background: var(--card-bg);
-    color: var(--card-text);
-    border-radius: 15px;
-    border: 1px solid rgba(52, 152, 219, 0.8); /* Strong visible border */
-    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Card hover effect */
-.light-mode .weather-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.18);
-}
-
-/* Developer name style (previous version) */
-.light-mode .developer {
-    margin-top: 15px;
-    font-size: 14px;
-    color: #555;
-    text-align: center;
-    font-style: italic;
-}
-/* Light Mode Input Style */
-.light-mode input[type="text"] {
-    background-color: #eef3f7; /* Slightly darker than white */
-    color: #1f2d3d;
-    border:1px solid rgba(52, 152, 219, 0.8);
-    padding: 8px 12px;
-    border-radius: 8px;
-    outline: none;
-    font-size: 14px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* On focus */
-.light-mode input[type="text"]:focus {
-    border-color: #2980b9;
-    box-shadow: 0 0 4px rgba(52, 152, 219, 0.5);
-}
-
-
-
-
-
 
 /* Dark mode overrides */
 .dark-mode {
@@ -69,19 +15,6 @@
     --card-text: #ecf0f1;
     --accent-color: #ffb84d;
 }
-/* Smooth transition for theme changes */
-body, 
-.weather-card, 
-input[type="text"], 
-button, 
-.developer {
-    transition: 
-        background-color 0.4s ease,
-        color 0.4s ease,
-        border-color 0.4s ease,
-        box-shadow 0.4s ease;
-}
-
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -125,10 +58,7 @@ input {
     transition: all 0.3s ease;
 }
 
-input:focus {
-    background-color: #f0f0f0;
-    color: #333;
-}
+
 
 button {
     margin-top: 15px;
@@ -136,7 +66,7 @@ button {
     border: none;
     border-radius: 8px;
     background-color: var(--accent-color);
-    color: white;
+    color: black;
     font-weight: bold;
     cursor: pointer;
     transition: transform 0.2s ease, background-color 0.3s ease;
@@ -158,7 +88,7 @@ button:hover {
     font-size: 14px;
     color: var(--text-color);
     opacity: 0.8;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid gray;
     padding-top: 10px;
     font-style: italic;
     letter-spacing: 1px;
@@ -169,20 +99,16 @@ button:hover {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Weather Card Base */
 .weather-card {
     background: var(--card-bg);
-    color: var(--card-text);
+    border-radius: 12px;
     padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-    max-width: 500px; /* Increased from ~350-400px */
-    width: 90%;
-    margin: 20px auto;
-    text-align: center;
-    transition: all 0.4s ease;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+    color: var(--card-text);
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
-
 
 .weather-card h2 {
     margin: 0 0 10px 0;
@@ -227,18 +153,35 @@ footer {
     top: 15px;
     right: 20px;
     background: #3498db;
-    color: white;
+    color: black;
     border: none;
     padding: 8px 14px;
     border-radius: 20px;
     cursor: pointer;
     font-size: 14px;
     box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
-    transition: background 0.5s, transform 0.2s;
+    transition: background 0.3s, transform 0.2s;
     z-index: 1000;
 }
 
 #themeToggle:hover {
     background: #2980b9;
     transform: scale(1.05);
+}
+/* Light Mode Input Style */
+.light-mode input[type="text"] {
+    border: 0.5px solid rgba(52, 152, 219, 0.8);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* On focus */
+.light-mode input[type="text"]:focus {
+    border-color: #2980b9;
+    box-shadow: 0 0 6px rgba(52, 152, 219, 0.5);
+}
+body.dark-mode #themeToggle {
+  color: white; /* This sets the font color to white */
+  background: #2980b9; /* Optional: A slightly darker blue for better contrast */
 }
